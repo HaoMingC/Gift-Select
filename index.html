@@ -143,6 +143,8 @@ button.chip:hover{border-color:var(--teal);color:#fff}
 .thumbs button:hover{opacity:1}
 .picno{position:absolute;top:14px;right:14px;background:rgba(29,29,27,.8);color:#fff;padding:3px 11px;border-radius:9999px;font-size:13px}
 .panel{padding:clamp(18px,2.4vw,30px);overflow:auto;min-height:0;display:flex;flex-direction:column;gap:16px}
+/* 說明區各塊不可被壓縮：details 有 overflow:hidden，被壓扁時展開的完整資訊會被裁掉、也捲不到 */
+.panel>*{flex-shrink:0}
 .eyebrow{display:flex;align-items:center;gap:8px;color:var(--ink2);font-weight:500;font-size:14px;letter-spacing:.05em}
 .eyebrow::before{content:"";width:18px;height:3px;background:var(--teal);border-radius:2px}
 .titleblock h1{font-size:clamp(26px,2.6vw,38px);font-weight:700;margin:6px 0 6px}
@@ -174,6 +176,7 @@ details[open] summary::after{content:"－"}
 .field{display:grid;grid-template-columns:104px minmax(0,1fr);gap:8px;padding:7px 0;border-bottom:1px dashed var(--border);font-size:14px;overflow-wrap:anywhere}
 .field:last-child{border-bottom:0}
 .field b{color:var(--ink2);font-size:13px;font-weight:500}
+.field span{white-space:pre-line}
 .descbox{margin:0 12px 12px}
 .desc{white-space:pre-wrap;line-height:1.8;font-size:15px}
 .extlink{display:inline-flex;margin-top:10px;padding:6px 14px;border-radius:var(--r-md);border:1.5px solid var(--teal-deep);color:var(--ink);font-weight:500;text-decoration:none}
